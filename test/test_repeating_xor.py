@@ -1,8 +1,9 @@
 from unittest import TestCase
+
 from set1.repeating_xor import *
 
 
-class TestRepeating_xor(TestCase):
+class TestRepeatingXor(TestCase):
     def test_repeating_xor(self):
         actual = repeating_xor("Burning 'em, if you ain't quick and nimble\nI go crazy when I hear a cymbal", "ICE")
         self.assertEqual(

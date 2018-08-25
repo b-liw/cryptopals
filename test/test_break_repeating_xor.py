@@ -1,8 +1,10 @@
-from unittest import TestCase
-from set1.break_repeating_xor import *
 import base64
+from unittest import TestCase
 
-class TestBreak_repeating_xor(TestCase):
+from set1.break_repeating_xor import *
+
+
+class TestBreakRepeatingXor(TestCase):
     def test_hamming_distance(self):
         self.assertEqual(37, hamming_distance("this is a test", "wokka wokka!!!"))
 
