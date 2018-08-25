@@ -1,11 +1,11 @@
 import binascii
 
 from set1.single_byte_xor_cipher_bruteforce import single_byte_xor_cipher_bruteforce
-from set1.repeating_xor import repeating_xor
+
 
 def count_set_bits(num):
     count = 0
-    while(num):
+    while (num):
         count += num & 1
         num >>= 1
     return count
@@ -24,10 +24,11 @@ def hamming_distance(s1, s2):
 
 def find_key_length(xored_msg):
     key = 0
-    minimum_distance = 2**32
+    minimum_distance = 2 ** 32
     for key_size in range(2, 40):
         i = 3
-        current_distance = hamming_distance(xored_msg[:key_size*i].decode(), xored_msg[key_size*i:key_size*i*2].decode()) / float(key_size)
+        current_distance = hamming_distance(xored_msg[:key_size * i].decode(),
+                                            xored_msg[key_size * i:key_size * i * 2].decode()) / float(key_size)
         if current_distance < minimum_distance:
             minimum_distance = current_distance
             key = key_size

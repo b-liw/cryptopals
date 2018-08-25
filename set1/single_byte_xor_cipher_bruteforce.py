@@ -72,5 +72,6 @@ def single_byte_xor_cipher_bruteforce(hex_enc_str):
     out = []
     for key in range(0xFF):
         out.append((key, "".join([chr(c ^ key) for c in bytes_from_hex_enc_str])))
-    possible_decrypted_texts = sorted(list(map(lambda k: (score_english_text(k[1]), k[0], k[1]), out)), key=lambda k: k[0], reverse=True)
+    possible_decrypted_texts = sorted(list(map(lambda k: (score_english_text(k[1]), k[0], k[1]), out)),
+                                      key=lambda k: k[0], reverse=True)
     return possible_decrypted_texts[0]
