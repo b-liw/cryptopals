@@ -5,4 +5,4 @@ def pkcs7_pad(plaintext, block_size):
 
 
 def pkcs7_unpad(plaintext):
-    return plaintext[:-ord(plaintext[-1])]
+    return plaintext[:-plaintext[-1]]
