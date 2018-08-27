@@ -31,9 +31,6 @@ def get_block_size():
     return brute_force_block_size(ciphertext)
 
 
-b'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\x00'
-
-
 def get_offset_and_pad_count_of_prefix(block_size):
     for pad_count in range(1, block_size + 1):
         pad_to_align_prefix_to_block_size = b"B" * pad_count
