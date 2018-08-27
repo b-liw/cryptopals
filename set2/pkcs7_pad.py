@@ -5,4 +5,8 @@ def pkcs7_pad(plaintext, block_size):
 
 
 def pkcs7_unpad(plaintext):
-    return plaintext[:-plaintext[-1]]
+    pad_byte = plaintext[-1]
+    if plaintext.endswith(chr(pad_byte).encode() * pad_byte):
+        return plaintext[:-pad_byte]
+    else:
+        raise ValueError("Invalid padding")
