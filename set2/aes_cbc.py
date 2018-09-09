@@ -4,9 +4,10 @@ from set2.aes_ecb import decrypt_aes_128_ecb
 from set2.aes_ecb import encrypt_aes_128_ecb
 
 
-def decrypt_aes_cbc(iv, ciphertext, key, block_size=16):
+def decrypt_aes_128_cbc(iv, ciphertext, key):
+    block_size = 16
     if len(ciphertext) % block_size != 0:
-        raise ValueError("plaintext length is incorrect")
+        raise ValueError("ciphertext length is incorrect")
     decrypted_blocks = []
     encrypted_blocks = list(reversed(
         [iv] + [ciphertext[i * block_size:i * block_size + block_size] for i in range(len(ciphertext) // block_size)]))
@@ -19,7 +20,8 @@ def decrypt_aes_cbc(iv, ciphertext, key, block_size=16):
     return b"".join(reversed(decrypted_blocks))
 
 
-def encrypt_aes_cbc(iv, plaintext, key, block_size=16):
+def encrypt_aes__128_cbc(iv, plaintext, key):
+    block_size = 16
     if len(plaintext) % block_size != 0:
         raise ValueError("plaintext length is incorrect")
     encrypted_blocks = [iv]
