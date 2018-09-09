@@ -20,7 +20,7 @@ def decrypt_aes_128_cbc(iv, ciphertext, key):
     return b"".join(reversed(decrypted_blocks))
 
 
-def encrypt_aes__128_cbc(iv, plaintext, key):
+def encrypt_aes_128_cbc(iv, plaintext, key):
     block_size = 16
     if len(plaintext) % block_size != 0:
         raise ValueError("plaintext length is incorrect")

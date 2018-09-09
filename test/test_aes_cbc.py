@@ -1,7 +1,7 @@
 from base64 import b64decode
 from unittest import TestCase
 
-from set2.aes_cbc import decrypt_aes_128_cbc, encrypt_aes__128_cbc
+from set2.aes_cbc import decrypt_aes_128_cbc, encrypt_aes_128_cbc
 
 
 class TestAesCbc(TestCase):
@@ -13,5 +13,5 @@ class TestAesCbc(TestCase):
         ciphertext = b"".join([b64decode(line.strip()) for line in lines])
         plain_text = decrypt_aes_128_cbc(iv, ciphertext, "YELLOW SUBMARINE")
         self.assertTrue(plain_text.startswith(b"I'm back and"))
-        ciphertext2 = encrypt_aes__128_cbc(iv, plain_text, "YELLOW SUBMARINE")
+        ciphertext2 = encrypt_aes_128_cbc(iv, plain_text, "YELLOW SUBMARINE")
         self.assertTrue(ciphertext == ciphertext2)
